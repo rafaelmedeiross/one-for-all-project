@@ -142,6 +142,31 @@ VALUES
   ("Baby", 10, 136),
   ("You Make Me Feel So..", 10, 83);
   
+    INSERT INTO SpotifyClone.followers (user_id, artist_id)
+VALUES
+  (1, 1),
+  (1, 4),
+  (1, 3),
+  (2, 1),
+  (2, 3),
+  (3, 2),
+  (3, 1),
+  (4, 4),
+  (5, 5),
+  (5, 6),
+  (6, 6),
+  (6, 3),
+  (6, 1),
+  (7, 2),
+  (7, 5),
+  (8, 1),
+  (8, 5),
+  (9, 6),
+  (9, 4),
+  (9, 3),
+  (10, 2),
+  (10, 6);
+  
 INSERT INTO SpotifyClone.history (song_id, user_id, played_date) VALUES
 (36, 1, "2020-02-28 10:45:55"),
 (25, 1, "2020-05-02 05:30:35"),
@@ -180,17 +205,6 @@ INSERT INTO SpotifyClone.history (song_id, user_id, played_date) VALUES
 (20, 10, "2017-02-06 08:21:34"),
 (21, 10, "2017-12-04 05:33:43"),
 (12, 10, "2017-07-27 05:24:49"),
-(13, 10, "2017-12-25 01:03:57");
-
-
-
-  
-INSERT INTO SpotifyClone.artists (artist_name) VALUES
-  ("Walter Phoenix"),
-  ("Peter Strong"),
-  ("Lance Day"),
-  ("Freedie Shannon"),
-  ("Tyler Isle"),
-  ("Fog");  
+(13, 10, "2017-12-25 01:03:57");  
 
 
