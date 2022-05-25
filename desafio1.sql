@@ -23,6 +23,14 @@ CREATE TABLE SpotifyClone.artists(
   PRIMARY KEY (artist_id)
 );
 
+CREATE TABLE SpotifyClone.followers(
+  user_id INT NOT NULL,
+  artist_id INT NOT NULL,
+  PRIMARY KEY (user_id, artist_id),
+  FOREIGN KEY (user_id) REFERENCES SpotifyClone.users (user_id),
+  FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists (artist_id)
+);
+
 CREATE TABLE SpotifyClone.albums(
   album_id INT NOT NULL AUTO_INCREMENT,
   album_name VARCHAR(100) NOT NULL,
@@ -50,13 +58,7 @@ CREATE TABLE SpotifyClone.history(
   FOREIGN KEY (user_id) REFERENCES SpotifyClone.users (user_id)
 );
 
-CREATE TABLE SpotifyClone.followers(
-  user_id INT NOT NULL,
-  artist_id INT NOT NULL,
-  PRIMARY KEY (user_id, artist_id),
-  FOREIGN KEY (user_id) REFERENCES SpotifyClone.users (user_id),
-  FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists (artist_id)
-);
+
 
 INSERT INTO SpotifyClone.plans (plan_type, plan_price)
 VALUES
