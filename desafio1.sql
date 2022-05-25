@@ -73,18 +73,18 @@ INSERT INTO SpotifyClone.artists (artist_name) VALUES
   ("Tyler Isle"),
   ("Fog");  
   
-INSERT INTO SpotifyClone.users (user_name, user_age, plan_id)
+INSERT INTO SpotifyClone.users (user_name, user_age, subscription_date, plan_id)
 VALUES
-  ("Thati",	23, 1),
-  ("Cintia",	35, 2),
-  ("Bill", 20, 3),
-  ("Roger", 45, 4),
-  ("Norman", 58, 4),
-  ("Patrick", 33, 2),
-  ("Vivian", 26, 3),
-  ("Carol", 19, 3),
-  ("Angelina", 42, 2),
-  ("Paul", 46, 2);
+  ('Thati', 23, '2019-10-20', 1),
+  ('Cintia', 35, '2017-12-30', 2),
+  ('Bill', 20, '2019-06-05', 3),
+  ('Roger', 45, '2020-05-13', 4),
+  ('Norman', 58, '2017-02-17', 4),
+  ('Patrick', 33, '2017-01-06', 2),
+  ('Vivian', 26, '2018-01-05', 3),
+  ('Carol', 19, '2018-02-14', 3),
+  ('Angelina', 42, '2018-04-29', 2),
+  ('Paul', 46, '2017-01-17', 2);
   
   INSERT INTO SpotifyClone.songs (song_name, album_id, song_length) VALUES
   ("Soul For Us", 1, 200),
