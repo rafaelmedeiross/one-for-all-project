@@ -142,7 +142,7 @@ VALUES
   ("Baby", 10, 136),
   ("You Make Me Feel So..", 10, 83);
   
-INSERT INTO SpotifyClone.history (song_id, user_id, play_date) VALUES
+INSERT INTO SpotifyClone.history (song_id, user_id, played_date) VALUES
 (36, 1, "2020-02-28 10:45:55"),
 (25, 1, "2020-05-02 05:30:35"),
 (23, 1, "2020-03-06 11:22:33"),
