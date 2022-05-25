@@ -73,7 +73,7 @@ INSERT INTO SpotifyClone.artists (artist_name) VALUES
   ("Tyler Isle"),
   ("Fog");  
   
-INSERT INTO SpotifyClone.users (user_name, user_age, pland_id)
+INSERT INTO SpotifyClone.users (user_name, user_age, plan_id)
 VALUES
   ("Thati",	23, 1),
   ("Cintia",	35, 2),
