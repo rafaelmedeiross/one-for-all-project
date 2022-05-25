@@ -11,7 +11,7 @@ CREATE TABLE SpotifyClone.plans(
 CREATE TABLE SpotifyClone.users(
   user_id INT PRIMARY KEY AUTO_INCREMENT,
   user_name VARCHAR(100) NOT NULL,
-  age INT NOT NULL,
+  user_age INT NOT NULL,
   plan_id INT NOT NULL,
   subscription_date DATETIME NOT NULL,
   FOREIGN KEY (plan_id) REFERENCES plans (plan_id)
@@ -41,7 +41,7 @@ CREATE TABLE SpotifyClone.songs(
   FOREIGN KEY (album_id) REFERENCES SpotifyClone.albums (album_id)
 );
 
-CREATE TABLE SpotifyClone.played_songs(
+CREATE TABLE SpotifyClone.history(
   song_id INT NOT NULL,
   user_id INT NOT NULL,
   played_date DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE SpotifyClone.followers(
   FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists (artist_id)
 );
 
-INSERT INTO SpotifyClone.plans (plan_type, price)
+INSERT INTO SpotifyClone.plans (plan_type, plan_price)
 VALUES
   ("gratuito", 0),
   ("familiar", 7.99),
@@ -73,7 +73,7 @@ INSERT INTO SpotifyClone.artists (artist_name) VALUES
   ("Tyler Isle"),
   ("Fog");  
   
-INSERT INTO SpotifyClone.users (user_name, age, pland_id)
+INSERT INTO SpotifyClone.users (user_name, user_age, pland_id)
 VALUES
   ("Thati",	23, 1),
   ("Cintia",	35, 2),
@@ -128,7 +128,7 @@ VALUES
   ("Baby", 10, 136),
   ("You Make Me Feel So..", 10, 83);
   
-INSERT INTO SpotifyClone.played_songs (song_id, user_id, play_date) VALUES
+INSERT INTO SpotifyClone.history (song_id, user_id, play_date) VALUES
 (36, 1, "2020-02-28 10:45:55"),
 (25, 1, "2020-05-02 05:30:35"),
 (23, 1, "2020-03-06 11:22:33"),
