@@ -4,13 +4,13 @@ CREATE DATABASE SpotifyClone;
 
 CREATE TABLE SpotifyClone.plans(
    plan_id INT PRIMARY KEY AUTO_INCREMENT,   
-   plan_type VARCHAR NOT NULL,   
-   plan_price DECIMAL(5,2) NOT NULL     
+   plan_type VARCHAR(100) NOT NULL,   
+   plan_price DECIMAL(5,2) NOT NULL   
 ) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.users(
   user_id INT PRIMARY KEY AUTO_INCREMENT,
-  user_name VARCHAR NOT NULL,
+  user_name VARCHAR(100) NOT NULL,
   age INT NOT NULL,
   plan_id INT NOT NULL,
   subscription_date DATETIME NOT NULL,
@@ -19,13 +19,13 @@ CREATE TABLE SpotifyClone.users(
 
 CREATE TABLE SpotifyClone.artists(
   artist_id INT NOT NULL AUTO_INCREMENT,
-  artist_name VARCHAR,
+  artist_name VARCHAR(100),
   PRIMARY KEY (artist_id)
 );
 
 CREATE TABLE SpotifyClone.albums(
   album_id INT NOT NULL AUTO_INCREMENT,
-  album_name VARCHAR NOT NULL,
+  album_name VARCHAR(100) NOT NULL,
   artist_id INT NOT NULL,
   release_year YEAR NOT NULL,
   PRIMARY KEY (album_id),
@@ -34,7 +34,7 @@ CREATE TABLE SpotifyClone.albums(
 
 CREATE TABLE SpotifyClone.songs(
   song_id INT NOT NULL AUTO_INCREMENT,
-  song_name VARCHAR NOT NULL,
+  song_name VARCHAR(100) NOT NULL,
   album_id INT NOT NULL,
   length INT NOT NULL,
   PRIMARY KEY (song_id),
