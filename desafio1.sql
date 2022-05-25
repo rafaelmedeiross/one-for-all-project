@@ -21,7 +21,7 @@ CREATE TABLE SpotifyClone.artists(
   artist_id INT NOT NULL AUTO_INCREMENT,
   artist_name VARCHAR(100),
   PRIMARY KEY (artist_id)
-);
+) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.followers(
   user_id INT NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE SpotifyClone.followers(
   PRIMARY KEY (user_id, artist_id),
   FOREIGN KEY (user_id) REFERENCES SpotifyClone.users (user_id),
   FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists (artist_id)
-);
+) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.albums(
   album_id INT NOT NULL AUTO_INCREMENT,
@@ -38,7 +38,7 @@ CREATE TABLE SpotifyClone.albums(
   release_year YEAR NOT NULL,
   PRIMARY KEY (album_id),
   FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists (artist_id)
-);
+) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.songs(
   song_id INT NOT NULL AUTO_INCREMENT,
@@ -47,7 +47,7 @@ CREATE TABLE SpotifyClone.songs(
   song_length INT NOT NULL,
   PRIMARY KEY (song_id),
   FOREIGN KEY (album_id) REFERENCES SpotifyClone.albums (album_id)
-);
+) engine = InnoDB;
 
 CREATE TABLE SpotifyClone.history(
   song_id INT NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE SpotifyClone.history(
   PRIMARY KEY (song_id, user_id),
   FOREIGN KEY (song_id) REFERENCES SpotifyClone.songs (song_id),
   FOREIGN KEY (user_id) REFERENCES SpotifyClone.users (user_id)
-);
+) engine = InnoDB;
 
 
 
@@ -87,6 +87,18 @@ VALUES
   ('Carol', 19, '2018-02-14', 3),
   ('Angelina', 42, '2018-04-29', 2),
   ('Paul', 46, '2017-01-17', 2);
+  
+  INSERT INTO SpotifyClone.albums (album_name, artist_id, release_year) VALUES
+  ("Envious", 1, 1990),
+  ("Exuberant", 1, 1993),
+  ("Hallowed Steam", 2, 1995),
+  ("Incandescent", 3, 1998),
+  ("Temporary Culture", 4, 2001),
+  ("Library of liberty", 4, 2003),
+  ("Chained Down", 5, 2007),
+  ("Cabinet of fools", 5, 2012),
+  ("No guarantees", 5, 2015),
+  ("Apparatus", 6, 2015);
   
   INSERT INTO SpotifyClone.songs (song_name, album_id, song_length) VALUES
   ("Soul For Us", 1, 200),
@@ -171,17 +183,7 @@ INSERT INTO SpotifyClone.history (song_id, user_id, play_date) VALUES
 (13, 10, "2017-12-25 01:03:57");
 
 
-INSERT INTO SpotifyClone.albums (album_name, artist_id, release_year) VALUES
-  ("Envious", 1, 1990),
-  ("Exuberant", 1, 1993),
-  ("Hallowed Steam", 2, 1995),
-  ("Incandescent", 3, 1998),
-  ("Temporary Culture", 4, 2001),
-  ("Library of liberty", 4, 2003),
-  ("Chained Down", 5, 2007),
-  ("Cabinet of fools", 5, 2012),
-  ("No guarantees", 5, 2015),
-  ("Apparatus", 6, 2015);
+
   
 INSERT INTO SpotifyClone.artists (artist_name) VALUES
   ("Walter Phoenix"),
