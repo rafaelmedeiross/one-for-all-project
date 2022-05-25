@@ -36,7 +36,7 @@ CREATE TABLE SpotifyClone.songs(
   song_id INT NOT NULL AUTO_INCREMENT,
   song_name VARCHAR(100) NOT NULL,
   album_id INT NOT NULL,
-  length INT NOT NULL,
+  song_length INT NOT NULL,
   PRIMARY KEY (song_id),
   FOREIGN KEY (album_id) REFERENCES SpotifyClone.albums (album_id)
 );
@@ -58,7 +58,7 @@ CREATE TABLE SpotifyClone.followers(
   FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists (artist_id)
 );
 
-INSERT INTO SpotifyClone.plans ((plan_type, price)
+INSERT INTO SpotifyClone.plans (plan_type, price)
 VALUES
   ("gratuito", 0),
   ("familiar", 7.99),
@@ -86,7 +86,7 @@ VALUES
   ("Angelina", 42, 2),
   ("Paul", 46, 2);
   
-  INSERT INTO SpotifyClone.songs (song_name, album_id, length) VALUES
+  INSERT INTO SpotifyClone.songs (song_name, album_id, song_length) VALUES
   ("Soul For Us", 1, 200),
   ("Reflections Of Magic", 1, 163),
   ("Dance With Her Own", 1, 116),
